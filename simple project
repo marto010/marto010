@@ -1,0 +1,6 @@
+Capitalize the first letter of each word in a string
+str1 = "pynative.com is for python lovers"
+
+str1 = str1.split()
+for x in str1:
+   print(x.capitalize(),end=" ")
