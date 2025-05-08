@@ -1,3 +1,4 @@
+Check if a user-entered string contains any digits using a for loop
 user = input("Enter: ")
 count = 0
 for x in user:
