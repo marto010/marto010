@@ -1,0 +1,48 @@
+print("*************ShoppingCart program**************")
+
+
+class ShoppingCart:
+    def __init__(self):
+        self.products = []
+        self.list_of_options ={"apple":25,
+                              "cherry":13,
+                               "pasta":12}
+        self.sum_price = 0
+    def add_product(self,choice):
+        return self.products.append(choice)
+    def view_products(self):
+        return self.products
+    def total(self,choice):
+        self.sum_price+= self.list_of_options.get(choice)
+        return self.sum_price
+
+
+def main():
+
+    cart = ShoppingCart()
+
+    while True:
+        print("\n1.Add product to the cart\n"
+              "2.View cart's products\n"
+              "3.View the total of the product's prices\n"
+              "4.Exit")
+        option = int(input("\nPlease , select a service: "))
+        if option == 1:
+         choice = input("Enter the products you would like to add: ")
+
+         if choice not in cart.list_of_options:
+            print("Invalid product, please try again :) !")
+         else:
+             cart.add_product(choice)
+             cart.total(choice)
+        elif option == 2:
+            print("Your products are: ")
+            for product in cart.view_products():
+                print(product,end=" ")
+        elif option == 3:
+            print(f"Your current  total is {cart.sum_price}$ ")
+        elif option == 4:
+            print("Thank you for your time!")
+            break
+if __name__ == "__main__":
+    main()
